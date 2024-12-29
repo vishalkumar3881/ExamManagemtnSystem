@@ -1,0 +1,30 @@
+﻿@model ExamManagementSystem.Models.User
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+@{
+}
+
+<form asp-action="CheckUserExist" asp-controller="Login" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
+  <div class="col-md-3">
+    <label for="validationCustom04" class="form-label">UserType</label>
+    <select class="form-select" asp-for="Roles" required>
+      <option selected disabled value="">Select...</option>
+            <option value="1">Admin</option>
+            <option value="2">Invigilator</option>
+            <option value="3">Management</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="validationCustom05" class="form-label">Username</label>
+        <input asp-for="Username" type="text" class="form-control" required>
+  </div>
+    <div class="col-md-3">
+        <label for="validationCustom05" class="form-label">Password</label>
+        <input asp-for="Password" type="text" class="form-control" id="validationCustom05" required>
+    </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>
